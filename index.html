@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agri-food CO2 Emissions Study</title>
+    <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+    
+    <header>
+        <h1>THE CARBON COST OF <br> FOOD PRODUCTION</h1>
+        <h2 class="subtext">How do agricultural practices affect our air?</h2>
+    </header>
+
+    <div class="intro-container">
+        <div class="intro-image">
+            <img src="AdobeStock_357547735.jpeg" alt="Tractor in field">
+        </div>
+        <div class="intro-text">
+            <h2>Introduction</h2>
+            <p>
+                Analyzing CO₂ emissions in the agri-food sector over time is essential for understanding 
+                the environmental and economic consequences of food production and their long-term impact. 
+                Agricultural production is a major contributor to global greenhouse gas emissions every year, 
+                with every stage of the supply chain playing a role, from crop cultivation to packaging and 
+                transportation and consumption. With a growing global population, the demand for food constantly rises, 
+                therefore driving production practices that often prioritize efficiency over sustainability. This trend 
+                significantly contributes to climate change, threatening ecosystems, biodiversity, food security, and economic stability. 
+                By analyzing emissions data across countries and years, we can gain better understanding of the relationship
+                between certain practices and climate change. Identifying these relationships is a crucial first step to developing 
+                sustainable food production and consumption practices in the future.
+        </p>
+        </div>
+    </div>
+    <p>To learn more about CO₂ emissions and the main contributors to climate change,
+        visit environmental and agricultural organizations such as the 
+        <a href="https://www.epa.gov/">Environmental Protection Agency (EPA) website</a>,  
+        <a href="https://www.noaa.gov/climate">NOAA website</a>, or
+        <a href="https://www.fao.org/home/en">Food and Agriculture Organizations (FAO) website</a>.
+    </p>
+
+
+            <h2>Introduction to the data</h2>
+
+            <p> In our analysis, we used a dataset from Kaggle titled "Agri-food CO2 emission dataset - Forecasting ML."
+                The data contains information on CO₂ emissions across 236 regions, over about 30 years for each region. 
+                With 6,966 entries and 34 attributes, it offers a substantial amount of data, primarily focusing on various 
+                agricultural practices and their resulting CO₂ emissions, measured in kilotonnes. Below is a list of the
+                attributes.
+            </p>  
+
+            <div>
+
+                <h3 class="table-head">Geographic, Time, and Climate Data</h3>
+                    <table>
+                    <tr><th class="gen-head">Attribute</th><th class="gen-head">Description</th></tr>
+                    <tr><td>Area</td><td>Region or country</td></tr>
+                    <tr><td>Year</td><td>Year of recording or prediction</td></tr>
+                    <tr><td>Average Temperature °C</td><td>Average yearly temperature increase</td></tr>
+                    <tr><td>Temperature Category</td><td>Temperature level</td></tr>
+                </table>
+
+                <h3 class="table-head">Land Use, Fire, and Soil-Based Emissions</h3>
+                <table>
+                    <tr><th class="emiss-head">Attribute</th><th class="emiss-head">Description</th></tr>
+                    <tr><td>Savanna fires</td><td>CO₂ emissions from fires in savannas</td></tr>
+                    <tr><td>Forest fires</td><td>CO₂ emissions from fires in forests</td></tr>
+                    <tr><td>Net Forest conversion</td><td>Change in forest area from deforestation and afforestation</td></tr>
+                    <tr><td>Forestland</td><td>Land covered by forests</td></tr>
+                    <tr><td>Drained organic soils (CO₂)</td><td>CO₂ emissions draining organic soils</td></tr>
+                    <tr><td>Fires in organic soils</td><td>CO₂ emissions from fires in organic soils</td></tr>
+                    <tr><td>Fires in humid tropical forests</td><td>CO₂ emissions from fires in humid tropical rainforests</td></tr>
+                    <tr><td>Crop Residues</td><td>CO₂ emissions from burning or decomposing leftover plant material after crop harvesting</td></tr>
+                    <tr><td>Rice Cultivation</td><td>Methane emissions from rice cultivation</td></tr>
+                </table>
+
+                <h3 class="table-head">Livestock, Fertilizer, and Industrial Emissions</h3>
+                <table>
+                    <tr><th class="emiss-head">Attribute</th><th class="emiss-head">Description</th></tr>
+                    <tr><td>Manure applied to Soils</td><td>CO₂ emissions from applying manure on fields</td></tr>
+                    <tr><td>Manure left on Pasture</td><td>CO₂ emissions from manure left on pastures or grazing lands</td></tr>
+                    <tr><td>Manure Management</td><td>CO₂ emissions from storing and managing manure</td></tr>
+                    <tr><td>Fertilizers Manufacturing</td><td>CO₂ emissions from fertilizer production</td></tr>
+                    <tr><td>Pesticides Manufacturing</td><td>CO₂ emissions from pesticide production</td></tr>
+                    <tr><td>IPPU</td><td>CO₂ emissions from industrial processes and product use emissions</td></tr>
+                </table>
+
+                <h3 class="table-head">Energy Use, Food, and Waste-Related Emissions</h3>
+                <table>
+                    <tr><th class="emiss-head">Attribute</th><th class="emiss-head">Description</th></tr>
+                    <tr><td>On-farm energy use</td><td>Energy consumption on farms</td></tr>
+                    <tr><td>On-farm Electricity Use</td><td>Electricity consumption on farms</td></tr>
+                    <tr><td>Food Processing</td><td>CO₂ emissions from processing food</td></tr>
+                    <tr><td>Food Packaging</td><td>CO₂ emissions from food packaging production</td></tr>
+                    <tr><td>Food Transport</td><td>CO₂ emissions from transporting food</td></tr>
+                    <tr><td>Food Retail</td><td>CO₂ emissions from the operation of retail food establishments</td></tr>
+                    <tr><td>Food Household Consumption</td><td>CO₂ emissions from food consumption in households</td></tr>
+                    <tr><td>Agrifood Systems Waste Disposal</td><td>CO₂ emissions from food waste disposal</td></tr>
+                </table>
+
+                <h3 class="table-head">Population and Summary Data</h3>
+                <table>
+                    <tr><th class="sum-head">Attribute</th><th class="sum-head">Description</th></tr>
+                    <tr><td>Rural population</td><td>Population living in rural areas</td></tr>
+                    <tr><td>Urban population</td><td>Population living in urban areas</td></tr>
+                    <tr><td>Total Population</td><td>Combined total population</td></tr>
+                    <tr><td>Total Population - Male</td><td>Male population</td></tr>
+                    <tr><td>Total Population - Female</td><td>Female population</td></tr>
+                    <tr><td>Population Size</td><td>Size category of the population (S, M, L)</td></tr>
+                    <tr><td>Total Emission</td><td>Total CO₂ emissions from all sources</td></tr>
+                </table>
+            </div>
+
+            <div class="divider">
+                <img src="Artboard 3.png" alt="Divider">
+            </div>
+
+        <h2>Visualizations and Analysis</h2>
+
+        <h3>Overall Emission and Temperature Trends</h3>
+
+        <p>
+            To fully understand the scope and trend of CO₂ emissions from agricultural practices, 
+            we must first look at the broader patterns in total CO₂ emissions and the changes in global 
+            temperature over time.
+        </p>
+
+        <div class = 'center'>
+            <iframe src="lines.html" width="100%" height="500px" frameborder="0"></iframe>
+        </div>
+
+        <p>
+            The chart on the left visualizes the total CO₂ emissions from 1990 to 2020, showing a steady, 
+            but significant increase. While there are short periods where the level of emissions dips from year 
+            to year, the overall trend follows an upward trajectory. In 2020, 18 million kilotons of CO₂ are 
+            emitted into our atmosphere. This rise reflects the growing global population and its increasing 
+            demand for efficient, large-scale food production, which often relies on unsustainable, emission-producing 
+            agricultural practices.
+        </p>
+        <p>
+            The chart on the right visualizes the trend in average global temperature change across different countries
+            over the same time period. Again, while the temperature fluctuates, the overall trend shows a rising global 
+            temperature. In 2020, we have reached an all time high, with the average rise in temperature across countries 
+            being 1.5° Celsius, or 34.7° Fahrenheit.
+        </p>
+        <p>
+            The side-by-side graphs emphasize the correlation between CO₂ emissions and the rising global temperature.
+            Examining the trends closely, we can see similar peaks and troughs like the spike in both total emissions
+            and average rise in temperature in the 1997-1998 range and the drop in both emissions and average rise in
+            temperature in 2011. These fluctuating trends represent the tension between sustainability and efficiency in
+            providing food for a growing population. With both emissions and rising temperature higher than ever, the 
+            environmental and economic impacts become more imminent.  
+        </p>
+
+        <h3>Top Emission Producing Practices</h3>
+
+        <p> 
+            To better understand what agricultural practices are contributing to these overall trends, we then chose 
+            to examine the top five most emission-intensive agricultural practices from 1990-2020, divided into 
+            emissions from natural processes (left) vs emissions from manmade processes (right).
+        </p>  
+        <img src="natural_manmade.png" width="100%" height="400px" frameborder="0"></img>   
+        <p> 
+            These two stacked area charts help reveal two important pieces of information: which practices 
+            contribute the most to emissions, and how these practices have changed over time. 
+        </p>
+        <p> 
+            The natural emissions chart shows that rice cultivation is consistently the highest CO₂e emitting practice
+            of natural emissions. This may be influenced by global dependence on rice as a food staple across cultures. 
+            Additionally, the rice cultivation process (involving flooded paddy fields) contributes so much to these emissions, 
+            as it provides ideal grounds for bacteria that produce a significant amount of bacteria that produce methane, an 
+            equivalent greenhouse gas to CO₂. Though it is the greatest contributor of CO₂e emissions within this category, 
+            its emission levels have remained fairly steady of the past 30 years. This is a trend followed by the next top 
+            two most emission producing natural practices: manure left on pastures and draining organic soils. The other top 
+            emission practices, fires in organic soils and savanna fires, show greater fluctuation, as they are typically more 
+            sporadic or rare, likely due to climate conditions or land management.
+        </p>
+        <p> 
+            The manmade emissions chart shows a vastly different trend. Over the past 30 years, all five major contributors 
+            have shown a growth, most prominently shown by the expanding area of IPPU (Industrial Processes and Product Use). 
+            Among the group, IPPU is the highest contributor to these emissions. This category is likely so large because it 
+            encompasses emissions from multiple industrial activities in the agri-food sector, like refrigeration or the various 
+            production of chemicals used in food packaging or processing. This growth shows the rapid industrialization of the food 
+            production process, even over the past 30 years. The other most contributing factors include agri-food waste systems 
+            disposal, food household consumption, food processing, and food manufacturing, further reflecting the dependence on 
+            industrialization in agricultural practices. The group with the next most area growth is food household consumption, 
+            reflecting the global population's growing consumerist tendencies and development of countries. Overall though, while 
+            these categories exhibit growth, they maintain relatively stable emissions throughout the years. Altogether, these trends 
+            show the dependence upon infrastructure and industrialization within agricultural practices and food systems.
+        </p>
+
+        <h3>Emissions Choropleth Map</h3>
+
+        <p>
+            While recognizing what agricultural practices contribute most to CO₂e emissions is important to creating more
+            sustainable ones, it is also important to recognize where these emissions are being most produced.
+        </p>
+    
+        <div class = 'center'>
+            <iframe src="agriculture_emissions.html" width="100%" height="550px" frameborder="0"></iframe>
+        </div>
+
+        <p>
+            To analyze which countries emit the most CO₂e, we created a choropleth map that shows the level of total
+            CO₂e emissions across the world over the past 30 years. The map highlights major contributors to these 
+            emission, such as China, India, the United States, and Brazil, as these countries consistently appear darker 
+            across time. The darker shades in many of these countries reflect the worsening of CO₂e emissions, 
+            with China, India, and the United States seeing continued increases in their emissions levels as they 
+            continue to industrialize and grow their agricultural practices. Other countries, particularly Indonesia,
+            have more variable patterns, showing a back-and-forth between worsening emissions vs efforts toward more 
+            sustainable practices or green movements. Noticeably, Brazil shows a significant reduction in emissions
+            around 2012, likely due to the rollback of deforestation in the Amazon. The color changes in the map over 
+            time reflect the history of CO₂e emissions and how major contributors have maintained their position
+            over time.
+        </p>
+
+
+        <h3>Emissions by Population Factors</h3>
+
+        <p>
+            Thinking about how population affects the demand for food, we wanted to look at how population
+            factors affect overall emissions.
+        </p>
+
+        <div class = 'center'>
+            <iframe src="per_cap_bubble_chart.html" width="100%" height="550px" frameborder="0"></iframe>
+        </div>
+
+        <p>
+            The interactive bubble chart above reveals two major trends: regions with smaller populations tend to have greater 
+            per capita emissions, and there is a general trend that the greater the population size, the greater the overall
+            emissions. In areas with smaller populations, emissions per capita can be higher due to the fact that their small
+            populations mean that emission-intensive practices have a disproportionally large effect on the emissions per person.
+            With fewer people to offset the impact of emissions, these practices result in higher emissions per capita compared
+            to highly populated areas. In more populated regions, per capita emissions are spread across a large population, even 
+            though these areas contribute the most to total emissions. This trend of large populations and large overall emissions 
+            reflects the growing demand for food, and therefore the greater reliance on industrialized agricultural practices.
+        </p>
+
+        <h3>VISUALIZATION 5</h3>
+    
+        <div class = 'center'>
+            <iframe src="agriculture_emissions.html" width="100%" height="550px" frameborder="0"></iframe>
+        </div>
+
+        <div class="divider">
+            <img src="Artboard 3.png" alt="Divider">
+        </div>
+
+        <h2>Summary and additional work</h2>
+
+        <p>
+            In this visualization analysis, we try to explore the US 
+            unemployment rate across states. We also examine the relation
+            between unemployment rate and other social factors. 
+        </p>
+        <p>
+            Unfortunately, this is the 2010 data thus may be different 
+            than the current economics status. Also, unemployment rate 
+            may fluctuate seasonally thus adding a time series analysis
+            will be more informative. 
+        </p>
+
+        <p>If you are interested in the project and want to share more
+            opinions or resource about the project, please contact:
+            Xiaoyi Yang (xiaoy.yang@northeastern.edu)
+        </p>
+
+</body>
+</html>
