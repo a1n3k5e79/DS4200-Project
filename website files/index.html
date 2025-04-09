@@ -166,11 +166,11 @@
             contribute the most to emissions, and how these practices have changed over time. 
         </p>
         <p> 
-            The natural emissions chart shows that rice cultivation is consistently the highest CO2e emitting practice
+            The natural emissions chart shows that rice cultivation is consistently the highest CO₂e emitting practice
             of natural emissions. This may be influenced by global dependence on rice as a food staple across cultures. 
             Additionally, the rice cultivation process (involving flooded paddy fields) contributes so much to these emissions, 
             as it provides ideal grounds for bacteria that produce a significant amount of bacteria that produce methane, an 
-            equivalent greenhouse gas to CO2. Though it is the greatest contributor of CO2e emissions within this category, 
+            equivalent greenhouse gas to CO₂. Though it is the greatest contributor of CO₂e emissions within this category, 
             its emission levels have remained fairly steady of the past 30 years. This is a trend followed by the next top 
             two most emission producing natural practices: manure left on pastures and draining organic soils. The other top 
             emission practices, fires in organic soils and savanna fires, show greater fluctuation, as they are typically more 
@@ -190,117 +190,65 @@
             show the dependence upon infrastructure and industrialization within agricultural practices and food systems.
         </p>
 
-        <h3>VISUALIZATION 3</h3>
-    
-
-    
-        <p>Meanwhile, we also believe that the geographical 
-            information is important when evaluating the unemployment
-            rate. Therefore, we also make use of geographical information 
-            on <a href="https://www.naturalearthdata.com/downloads/">Natural Earth</a>. 
-            The website provides the geographical information for making maps for US states. 
-        </p>
-
-        <p>To make a better data visualization, we remove the Alaska and Hawaii
-            from the data. Following is an interactive map for the 
-            lower 48 states in US. User can zoom in the map. The color
-            indicates the unemployment rate for each state. When click any 
-            state, other social factors will be revealed for the state. </p>
-
-            <div class = 'center'>
-                <iframe src="map.html" width="80%" height="400px" frameborder="0"></iframe>
-            </div>
-            
-            <p>In general, west coast states tend to have higher 
-                unemployment rate. On the east coast, West virginia 
-                and New York state tend to have higher unemplyment rate
-                than the others. In the south, Mississippi and Louisiana
-                are the ones with the much higher unemplyment rate.
-            </p>
-
-        <h3>Overview of the Unemployment rate</h3>
-        
-        <div class = 'container'>
-            <div class = 'image'>
-                <!-- <iframe src="histogram/index.html" width="100%" height="400px" frameborder="0"></iframe>-->
-                <iframe src="histogram/finish.png" width="100%" height="400px" frameborder="0"></iframe>
-            </div>
-            <div class = 'text'>
-                <p> First, we present an overview of the unemployment rate
-                    for all 50 states. Alaska is the one with the 
-                    highest unemployment rate, which may due to the seasonal 
-                    business in the state. The effectiveness of labor market 
-                    policies and governance structures can influence unemployment 
-                    rates. Washington, D.C., being the seat of government, may 
-                    experience fluctuations in employment related to government 
-                    spending and policies. Mississippi and Louisiana have economies 
-                    that are heavily reliant on sectors such as agriculture, 
-                    manufacturing, and energy. Economic downturns or fluctuations 
-                    in these industries can impact employment opportunities. 
-                    Connecticut, South Dakota and Virginia have the lowest 
-                    unemplyment rate. These states often have diverse economies 
-                    with strong sectors such as technology, healthcare, finance, 
-                    and tourism. A diverse economy can provide more resilience to 
-                    economic downturns.
-                </p>
-            </div>            
-        </div>
-        
-        <h3> The relationship between unemployment rate and other social factors</h3>
-
-        <div class = 'container'>
-            <div class = 'text'>
-                <p>Moreover, we also want to examine the relationship between
-                    unemployment rate and other social factors in the data. All 
-                    features are numerical thus we firts create a correlation
-                    plot to examine whether there are linear relationship between 
-                    unemployment rate with other social factors. Notice that if 
-                    the correlation is small, it only means that there is no potential
-                    linear relationship between two features. 
-                </p>
-                <p>
-                    Based on the correlation plot, among all the features, poverty 
-                    has the strongest correlation with the unemployment rate since
-                    they are both related to the economics. The percentage of single 
-                    parents is the second important feature which inidicates the 
-                    stability of family is also strongly related to the job market. 
-                    The increase of unemployment rate may also related to the increase 
-                    of violent crime and murder rate but has a negative relationship
-                    with education indicators, like the percentage of people who go to
-                    high school and college. The only variable that has no direct linear
-                    relation with the unemployment rate is Metropolitan, which means the 
-                    percent of residents living in a metropolitan area. 
-                </p>
-            </div>
-            <div class = 'image'>
-                <img src="correlation_plot.png" width="100%" height="500px" frameborder="0"></img>
-            </div>   
-        </div>
-
-        <p>We have also create an interactive scatter plot so that 
-            our users can select a couple of states within
-            a certain range of unemployment rate and to see how the 
-            other factors may be related here. 
-        </p>
-
-        <div class = 'center'>
-            <iframe src="scatter.html" width="85%" height="550px" frameborder="0"></iframe>
-        </div>
-
-        <h3>Compare MA to the other states</h3>
+        <h3>Emissions Choropleth Map</h3>
 
         <p>
-            Since we are in MA, thus we want to take a closer look between
-            MA and other states. We create the following interactive plot
-            such that user can choose another state to compare with MA and 
-            show the bar plot on each factors. 
+            While recognizing what agricultural practices contribute most to CO₂e emissions is important to creating more
+            sustainable ones, it is also important to recognize where these emissions are being most produced.
+        </p>
+    
+        <div class = 'center'>
+            <iframe src="agriculture_emissions.html" width="100%" height="550px" frameborder="0"></iframe>
+        </div>
+
+        <p>
+            To analyze which countries emit the most CO₂e, we created a choropleth map that shows the level of total
+            CO₂e emissions across the world over the past 30 years. The map highlights major contributors to these 
+            emission, such as China, India, the United States, and Brazil, as these countries consistently appear darker 
+            across time. The darker shades in many of these countries reflect the worsening of CO₂e emissions, 
+            with China, India, and the United States seeing continued increases in their emissions levels as they 
+            continue to industrialize and grow their agricultural practices. Other countries, particularly Indonesia,
+            have more variable patterns, showing a back-and-forth between worsening emissions vs efforts toward more 
+            sustainable practices or green movements. Noticeably, Brazil shows a significant reduction in emissions
+            around 2012, likely due to the rollback of deforestation in the Amazon. The color changes in the map over 
+            time reflect the history of CO₂e emissions and how major contributors have maintained their position
+            over time.
+        </p>
+
+
+        <h3>Emissions by Population Factors</h3>
+
+        <p>
+            Thinking about how population affects the demand for food, we wanted to look at how population
+            factors affect overall emissions.
         </p>
 
         <div class = 'center'>
-            <iframe src="summary.html" width="95%" height="300px" frameborder="0"></iframe>
+            <iframe src="per_cap_bubble_chart.html" width="100%" height="550px" frameborder="0"></iframe>
         </div>
 
-        <h3>Summary and additional work</h3>
+        <p>
+            The interactive bubble chart above reveals two major trends: regions with smaller populations tend to have greater 
+            per capita emissions, and there is a general trend that the greater the population size, the greater the overall
+            emissions. In areas with smaller populations, emissions per capita can be higher due to the fact that their small
+            populations mean that emission-intensive practices have a disproportionally large effect on the emissions per person.
+            With fewer people to offset the impact of emissions, these practices result in higher emissions per capita compared
+            to highly populated areas. In more populated regions, per capita emissions are spread across a large population, even 
+            though these areas contribute the most to total emissions. This trend of large populations and large overall emissions 
+            reflects the growing demand for food, and therefore the greater reliance on industrialized agricultural practices.
+        </p>
+
+        <h3>VISUALIZATION 5</h3>
+    
+        <div class = 'center'>
+            <iframe src="agriculture_emissions.html" width="100%" height="550px" frameborder="0"></iframe>
+        </div>
+
+        <div class="divider">
+            <img src="Artboard 3.png" alt="Divider">
+        </div>
+
+        <h2>Summary and additional work</h2>
 
         <p>
             In this visualization analysis, we try to explore the US 
