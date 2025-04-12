@@ -6,7 +6,7 @@ emissions_by_year.then(function(data) {
       d.Year = +d.Year;
   });
 
-  let width = 550, height = 450;
+  let width = 540, height = 450;
 
   let margin = {
     top: 20,
@@ -77,7 +77,7 @@ avg_temp.then(function(data) {
       d.Year = +d.Year;
   });
 
-  let width = 550, height = 450;
+  let width = 540, height = 450;
 
   let margin = {
     top: 20,
